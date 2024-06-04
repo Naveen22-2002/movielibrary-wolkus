@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+:root {
+    --border: #d1d5db;
+    --greyLight: #dfdddd;
+    --greyMedium: #6b7280;
+    --greyDark: #374151;
+    --blackSecondary: #252527;
+    --primaryColor: #4a90e2;
+    --secondaryColor: #e94e77;
+    --backgroundColor: #f0f2f5;
+    --white: #ffffff;
+    --shadow: 0 4px 8px rgba(65, 63, 63, 0.1);
+    --radius: 8px;
+    --transition: all 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--backgroundColor);
+    transition: background-color 0.3s ease-in-out;
+}
+
+body {
+    background: linear-gradient(135deg, #ece9e6 25%, #ffffff 100%);
+}
+
+header {
+    background-image: url('images/main.jpg');
+    background-size: cover;
+    background-position: center 21%;
+    padding: 80px 40px;
+    position: relative;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+header a {
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+header a:hover,
+header a:focus {
+    text-decoration: underline;
+    color: var(--secondaryColor);
+}
+
+header h1 {
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+button {
+    background: var(--primaryColor);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1em;
+}
+
+button:hover,
+button:focus {
+    background: var(--secondaryColor);
+    transform: translateY(-2px);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primaryColor);
+    transition: var(--transition);
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+    color: var(--secondaryColor);
+    transform: scale(1.05);
+}
+
+/* Utility Classes */
+.black {
+    color: var(--blackSecondary);
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.fs-18 {
+    font-size: 1.125em;
+}
+
+.hide {
+    display: none;
+}
+
+.mb-1 {
+    margin-bottom: 1em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-grey-light {
+    color: var(--greyLight);
+}
+
+/* Header */
+.header-contents {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 550px;
+    flex-wrap: wrap;
+    
+}
+
+.header-link {
+    color: var(--white);
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.header-link:hover {
+    text-decoration: underline;
+    color: var(--secondaryColor);
+}
+
+@media (max-width: 650px) {
+    header h1 {
+        font-size: 2rem;
+        width: 100%;
+    }
+}
+
+/* Main */
+.main-search-field {
+    display: flex;
+    margin: 0 auto;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 550px;
+    width: 100%;
+}
+
+.main-search-field input,
+.main-search-field button {
+    padding: 15px 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1em;
+    transition: var(--transition);
+}
+
+.main-search-field input {
+    flex-grow: 2;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.main-search-field button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: var(--primaryColor);
+}
+
+.main-search-field input:focus,
+.main-search-field button:focus {
+    outline: none;
+    box-shadow: var(--shadow);
+    background: var(--secondaryColor);
+}
+
+.main-contents {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 4em auto;
+    max-width: 550px;
+    transition: var(--transition);
+}
+
+@media (max-width: 650px) {
+    .main-contents {
+        margin: 6em auto;
+        max-width: 90%;
+    }
+}
+
+.movie-icon {
+    margin-bottom: 0.5em;
+}
+
+#movielist-default-container,
+#watchlist-default-display-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+}
+
+.card {
+    display: grid;
+    column-gap: 1.5em;
+    border-bottom: 1px solid var(--greyLight);
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
+    grid-template-areas:
+        'poster header'
+        'poster meta'
+        'poster plot'
+        'poster plot';
+    transition: var(--transition);
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 650px) {
+    .card {
+        gap: 1em;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            'poster header'
+            'poster meta'
+            'plot plot';
+    }
+}
+
+.card-poster {
+    grid-area: poster;
+    border-radius: var(--radius);
+    width: 150px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.card-poster:hover {
+    transform: scale(1.05);
+}
+
+.card-header {
+    grid-area: header;
+    align-items: center;
+    display: flex;
+    margin-bottom: 0.5em;
+}
+
+.star-icon {
+    margin-right: 0.5em;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 0.5em;
+    color: var(--blackSecondary);
+    transition: var(--transition);
+}
+
+.card-title:hover {
+    color: var(--primaryColor);
+}
+
+.card-meta {
+    grid-area: meta;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--greyMedium);
+}
+
+.card-plot {
+    grid-area: plot;
+    color: var(--greyDark);
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.card-btn {
+    background: var(--secondaryColor);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card-btn:hover {
+    background: var(--primaryColor);
+    transform: translateY(-2px);
+}
+
+.read-more {
+    border: none;
+    background: none;
+    color: var(--primaryColor);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1em;
+}
+
+.read-more:hover,
+.read-more:focus {
+    color: var(--secondaryColor);
+    text-decoration: underline;
+}
+
+.read-more-plot,
+.remove-watchlist-btn {
+    display: none;
+}

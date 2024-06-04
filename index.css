@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+body {
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.custom-field {
+    position: relative;
+    margin-top: 20px;
+}
+
+.custom-field input {
+    padding: 14px;
+    width: 320px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-field input:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0px 0px 0px 4px rgba(255, 107, 107, 0.2);
+}
+
+.custom-field .placeholder {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+.custom-field input:valid + .placeholder,
+.custom-field input:focus + .placeholder {
+    top: 6px;
+    font-size: 12px;
+    color: #777;
+    background: #fff;
+    padding: 0px 4px;
+    border-radius: 4px;
+}
+
+.message {
+    font-size: 2.5rem;
+    color: #ff6b6b;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.success {
+    font-size: 1.25rem;
+    color: #27ae60;
+    margin-top: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #ffcd56;
+    color: #fff;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    background-color: #ff4757;
+    transform: scale(1.05);
+}
+
+a {
+    color: #ff6b6b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff4757;
+}
