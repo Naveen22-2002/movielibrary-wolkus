@@ -8,5 +8,4 @@ For Deployment
 https://app.vercel.com/
 
 For preview
-
-[https://movielibrarywebauth.netlify.app](https://movielibrary-wolkus-git-master-ede-naveens-projects.vercel.app/)
+https://movielibrary-wolkus-fas43cu88-ede-naveens-projects.vercel.app/
